@@ -2,7 +2,7 @@ const path = require('path')
 const http = require('http')
 const express = require('express')
 const socketio = require('socket.io')
-const { addUser, getUser, getUsersOnPage } = require('./utils/user')
+const { addUser, getUser, removeUser, getUsersOnPage } = require('./utils/user')
 const { getPage, updatePage } = require('./utils/page')
 
 const app = express()
@@ -50,6 +50,13 @@ io.on('connection', (socket) => {
 
     socket.on('disconnect', () => {
         console.log('Web socket disconnected: ' + socket.id)
+        const user = removeUser(socket.id)
+        if (user) {
+            io.to(user.pagename).emit('pageUsers', {
+                pagename: user.pagename,
+                users: getUsersOnPage(user.pagename)
+            })
+        }
     })
 })
 

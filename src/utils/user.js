@@ -16,7 +16,7 @@ const addUser = ({ id, username, pagename }) => {
 
     if (existingUser) {
         return {
-            error: `{{username}} has already joined {{pagename}}`
+            error: `${username} has already joined ${pagename}`
         }
     }
 
@@ -34,8 +34,17 @@ const getUsersOnPage = (pagename) => {
     return users.filter((user) => user.pagename === pagename)
 }
 
+const removeUser = (id) => {
+    const index = users.findIndex((user) => user.id === id)
+
+    if (index !== -1) {
+        return users.splice(index, 1)[0]
+    }
+}
+
 module.exports = {
     addUser,
     getUser,
+    removeUser,
     getUsersOnPage
 }

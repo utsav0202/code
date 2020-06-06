@@ -4,17 +4,20 @@
 body {font-family: Arial, Helvetica, sans-serif;}
 
 form {
+  width: 540px;
   border: 3px solid #f1f1f1;
   font-family: Arial;
 }
 
 .container {
+  width: 500px;
   padding: 20px;
-  background-color: #f1f1f1;
+  /* background-color: #f1f1f1; */
+  /* border: 1px solid rgb(15, 14, 14); */
 }
 
 input[type=text], input[type=submit] {
-  width: 100%;
+  width: 300px;
   padding: 12px;
   margin: 8px 0;
   display: inline-block;
@@ -27,7 +30,8 @@ input[type=checkbox] {
 }
 
 input[type=submit] {
-  background-color: rgb(47, 35, 209);
+  width: 150px;
+  background-color: rgb(19, 130, 233);
   color: white;
   border: none;
 }
@@ -44,7 +48,7 @@ input[type=submit]:hover {
   </div>
 
   <div class="container" style="background-color:white">
-    <input type="text" placeholder="Username" name="username" required autocomplete="off">
+    <input type="text" placeholder="Username" name="username" required autocomplete="off"><br>
     <input type="text" placeholder="Page name" name="pagename" required autocomplete="off">
     <!-- <label>
       <input type="checkbox" name="newpage"> Create a new page
