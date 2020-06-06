@@ -7,6 +7,7 @@ node -e "console.log('Running Node.js ' + process.version)"
 
 curl -o codemirror.zip  https://codemirror.net/codemirror.zip
 unzip codemirror.zip
+mkdir ~/code/public/plugins
 mv codemirror-5.54.0 ~/code/public/plugins/codemirror
 cd code
 npm install

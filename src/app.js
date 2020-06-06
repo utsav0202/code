@@ -24,10 +24,7 @@ io.on('connection', (socket) => {
         }
 
         socket.join(user.pagename)
-        io.to(user.pagename).emit('pageUsers', {
-            pagename: user.pagename,
-            users: getUsersOnPage(user.pagename)
-        })
+        io.to(user.pagename).emit('pageUsers', getUsersOnPage(user.pagename))
 
         socket.emit('updatedCode', getPage(user.pagename))
 
