@@ -33,7 +33,7 @@ const getUsersOnPage = (pagename) => {
     pagename = pagename.trim().toLowerCase()
     const pu = users.filter((user) => user.pagename === pagename)
     const pageUsers = pu.map(({username}) => username)
-    console.log(JSON.stringify(pageUsers))
+    // console.log(JSON.stringify(pageUsers))
     return pageUsers
 }
 
